@@ -121,4 +121,7 @@ public class MainActivity extends AppCompatActivity {
         return ret;
     }
 
+    public void end(View view) {
+        finish();
+    }
 }
