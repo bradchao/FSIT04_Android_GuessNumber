@@ -8,6 +8,7 @@
     tools:context="tw.org.iii.guessnumber.MainActivity">
 
     <RelativeLayout
+        android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -30,6 +31,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -54,6 +56,14 @@
             android:text="Exit"
             />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:layout_above="@id/footer"
+        android:background="#ff0"
+        />
 
 
 </RelativeLayout>
