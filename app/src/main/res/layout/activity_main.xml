@@ -21,6 +21,7 @@
             android:text="猜"
             />
         <EditText
+            android:id="@+id/input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -57,13 +58,22 @@
             />
     </LinearLayout>
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/top"
         android:layout_above="@id/footer"
         android:background="#ff0"
-        />
+        >
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="24sp"
+            android:textColor="#00f"
+            />
+
+    </ScrollView>
 
 
 </RelativeLayout>
