@@ -75,5 +75,17 @@
 
     </ScrollView>
 
+    <TextView
+        android:id="@+id/mesg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="WINNER"
+        android:textSize="48sp"
+        android:textColor="#0f0"
+        android:background="#00f"
+        android:visibility="gone"
+        />
+
 
 </RelativeLayout>

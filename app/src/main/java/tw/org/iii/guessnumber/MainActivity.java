@@ -1,5 +1,6 @@
 package tw.org.iii.guessnumber;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView log;
+    private TextView log, mesg;
     private EditText input;
     private Button guess;
     private String answer;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         log = findViewById(R.id.log);
         input = findViewById(R.id.input);
+        mesg = findViewById(R.id.mesg);
         guess = findViewById(R.id.guess);
         guess.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,14 +30,23 @@ public class MainActivity extends AppCompatActivity {
                 doGuess();
             }
         });
+        mesg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mesg.setVisibility(View.GONE);
+            }
+        });
 
         initGame();
     }
 
     private void initGame(){
+
         answer = createAnswer(3);
         input.setText("");
         log.setText("");
+        answer = "123";
+        Log.v("brad", answer);
     }
 
     private void doGuess(){
@@ -46,7 +57,28 @@ public class MainActivity extends AppCompatActivity {
         String result = checkAB(answer, strInput);
         log.append(strInput + ":" + result + "\n");
 
+        if (result.equals("3A0B")){
+            showDialog();
+        }
+
     }
+
+    private void showDialog(){
+        //mesg.setVisibility(View.VISIBLE);
+
+        AlertDialog alert = null;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("WINNER");
+        builder.setMessage("恭喜老爺,賀喜夫人");
+        alert = builder.create();
+        alert.show();
+
+
+
+
+
+    }
+
 
     static String checkAB(String a, String g) {
         int A, B; A = B = 0;
